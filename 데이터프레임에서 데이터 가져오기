@@ -1,0 +1,13 @@
+income=c(100000, 90000, 50000, 300, 10)
+club=c("juventus", "milan", "real madrid", "man utd", "liverpool")
+big_club=c(TRUE, TRUE, TRUE, FALSE, FALSE)
+df=data.frame(income,club,big_club)
+df
+df[0]#친절하게 자신을 설명
+df[2,1]
+df[3,1]
+df[1,2]
+df[2,]#2행에 있는값 가져오기
+df[,1]#1열에 있는값 가져오기
+df[,10]#10열이 없으므로 오류 발생
+
