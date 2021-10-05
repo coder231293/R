@@ -1,0 +1,4 @@
+x=c(1:12)
+x
+x=matrix(x, nrow=3, byrow=TRUE)
+x
