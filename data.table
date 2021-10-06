@@ -1,0 +1,4 @@
+install.packages('data.table')#data.table은 R에서 기본적으로 제공해주는 데이터 구조가 아니므로 설치해야 함
+library(data.table)
+dt <- data.table(a = c(1, 2), b = c("a", "b"))#dt는 테이블 명, a는 행, b는 열 인 테이블dt생성
+dt
