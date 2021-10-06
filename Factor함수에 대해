@@ -1,0 +1,8 @@
+answer <- c(1,3,2,3,3,2,1)
+factor_answer <- factor(answer, c(1,2,3,4,5),c("매우 불만족", "불만족", "보통", "만족", "매우 만족"))#수준을 1,2,3,4,5로 지정함
+#만일 level을 지정하지 않은 경우 R이 알아서 자료를 파악해 지정함
+str(factor_answer)
+factor_answer
+mode(factor_answer)#mode함수는 factor가 가진 원소들의 자료형을 알려준다
+length(factor_answer)#length는 factor가 가진 원소의 개수를 알려준다
+levels(factor_answer)#levels는 factor가 가진 수준을 보여줌

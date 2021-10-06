@@ -1,4 +1,0 @@
-answer <- c(1,3,2,3,3,2,1)
-factor_answer <- factor(answer)
-str(factor_answer)
-factor_answer
