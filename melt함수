@@ -1,0 +1,5 @@
+install.packages('reshape2')#melt,cast함수 사용 위한 패키지 reshape2설치
+library(reshape2)#패키지 설치 후 library 로드
+aqm <- melt(airquality, id=c("Month", "Day"), na.rm=TRUE)#Month,Day열을 기준으로 다른 열들을 나열시킴
+#na.rm=TRUE는 NA값들을 제외시킴
+aqm
