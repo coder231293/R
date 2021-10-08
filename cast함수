@@ -1,0 +1,3 @@
+install.packages('reshape')#cast함수 사용위해 reshape패키지설치
+library(reshape)
+cast(aqm, Day~Month~variable)#cast함수에 1~2~3에서 1은 행, 2는 열, 3은 변수이고 변수의 개수에 따라서 행렬의 개수가 생성됨
