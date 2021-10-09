@@ -1,0 +1,3 @@
+cast(aqm, Month~variable, mean)#mean => fun.aggregate의 줄임형 x축에 Month, y축에 variable, z축에 aggregation function이 필요하게 되는데 이때 mean, 평균값을 표현
+cast(aqm, Month~ .| variable, mean)# .|을 통해 각 변수들을 분리
+cast(aqm, Month~ .| variable, mean, margins=c("grand_row", "grand_col"))
