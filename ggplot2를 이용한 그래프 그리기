@@ -1,0 +1,4 @@
+install.packages("ggplot2")#그래프 그리기 위한 패키지 ggplot2설치
+library(ggplot2)
+x <- c("1", "1", "2", "3", "1", "2", "4", "2")
+qplot(x)#qplot함수는 그래프를 그려주는 함수임
