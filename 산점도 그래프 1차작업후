@@ -1,0 +1,3 @@
+ggplot(data=mpg, aes(x=displ, y=hwy)) +
+  geom_point() +
+  xlim(3,6)#geom_point는 x축, y축을 잡고 point그래프를 그려달라는 의미#x의 좌표를 3에서부터 6까지 제한시킴
