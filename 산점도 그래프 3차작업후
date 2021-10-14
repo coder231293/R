@@ -1,0 +1,6 @@
+df_mpg <- mpg %>%
+  group_by(drv) %>%
+  summarise(mean_hwy = mean(hwy))#mpg데이터를 drv로 분류하고 hwy의 평균값을 mean_hwy라는 변수명으로 나타냄
+df_mpg
+ggplot(data=mpg, aes(x=displ, y=hwy)) +
+  geom_col()#막대 그래프는 기둥 형태이므로 col()을 사용 #방금 전처리해서 새로 지정한 티블형태 데이터프레임 df_mpg를 막대 그래프로 그리기 위한 코드
