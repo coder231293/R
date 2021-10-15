@@ -1,0 +1,6 @@
+ggplot(data=mpg, aes(x=date, y=unemploy)) +
+  geom_line()
+ggplot(data=mpg, aes(x=drv, y=hwy)) +
+  geom_boxplot()
+#1번째코드는 시계열그래프를 그린 코드
+#2번째코드는 상자 그림 그래프를 그린코드이다
