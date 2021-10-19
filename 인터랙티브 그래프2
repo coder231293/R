@@ -1,0 +1,10 @@
+install.packages("dygraphs")#시계열 그래프를 만들기 위해 필요한 패키지
+library(dygraphs)
+economics <- ggplot2::economics#economics데이터 프레임 정하기
+head(economics)
+library(xts)#xts패키지는 R에 내장되어 있지만 따로 로드해야 함
+eco <- xts(economics$unemploy,order.by = economics$date)#economics데이터중에서 unemploy데이터만 뺐고 date변수에 맞춰 정렬하여 xts타입으로 바꿈 
+head(eco)
+class(eco)#zoo클래스로 나오고 zoo클래스는 시간 속성 데이터를 갖는 시계열 데이터임
+dygraph(eco)
+dygraph(eco) %>% dyRangeSelector()
