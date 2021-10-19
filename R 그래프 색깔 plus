@@ -1,0 +1,8 @@
+p <- ggplot(data=mpg, aes(x=displ, y=hwy, col=drv)) +
+  geom_point()#원래 산점도그래프에 색깔을 넣고 종류에 따라 색깔이 다르게 나옴
+p
+ggplotly(p)#ggplotly함수를 통해 인터랙티브 그래프를 만들 수 있음
+
+q <- ggplot(data=diamonds, aes(x=cut, fill=clarity)) +
+  geom_bar(position = "dodge")#position파라미터는 같은 공간에 차지하는 것들을 어떻게 보여주는가인데 dodge는 종류별로 나뉘어져 막대가 나란히 정렬
+q
