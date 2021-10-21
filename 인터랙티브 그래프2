@@ -8,3 +8,10 @@ head(eco)
 class(eco)#zoo클래스로 나오고 zoo클래스는 시간 속성 데이터를 갖는 시계열 데이터임
 dygraph(eco)
 dygraph(eco) %>% dyRangeSelector()
+eco_a <- xts(economics$psavert, order.by = economics$date)
+eco_b <- xts(economics$unemploy/1000, order.by = economics$date)#실업자 자료, 너무 수가 크기 때문에 1000을 나눔
+eco_3 <- cbind(eco_a, eco_b)#만든 두 데이터를 합하기 위해 cbind사용
+colnames(eco_3) <- c("psavent", "unemploy")
+head(eco_3)
+dygraph(eco_3) %>% dyRangeSelector()
+
