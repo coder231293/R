@@ -1,0 +1,18 @@
+df <- data.frame(sex=c("M", "F", NA, "M", "F"), score=c(5,4,3,4,NA))#NA라고 쓴 부분은 결측치가 됨
+df
+is.na(df)#df에 NA가 있는지 여부를 물어붐
+table(is.na(df))#df에 NA가 있는지 여부를 물어보고 이에 따른 빈도표를 만들어준다
+table(is.na(df$sex))
+table(is.na(df$score))
+mean(df$score)#평균을 구할때 결측치 NA가 있으면 오류가 발생함 이럴때 filter함수로 결측치부분을 걸러야 함
+sum(df$score)
+library(dplyr)
+df %>% filter(is.na(score))#score변수의 NA값이 있는 부분만 추출
+df %>% filter(!is.na(score))#score변수의 NA값이 없는 부분만 추출
+df_nomiss <- df %>% filter(!is.na(score))#score변수의 NA값이 없는 부분만 추출하여 새로운 데이터 프레임 형성
+mean(df_nomiss$score)#NA값이 없으므로 평균이나 합을 제대로 구할 수 있음
+sum(df_nomiss$score)
+df_nomiss <- df %>% filter(!is.na(score) & !is.na(sex))#score의 NA값이 없으면서 sex의 NA값이 없는 부분만 추출
+df_nomiss
+df_nomiss2 <- na.omit(df)#na.omit함수는 NA값이 없는 행만 추출
+df_nomiss2
