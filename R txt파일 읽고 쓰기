@@ -1,0 +1,8 @@
+setwd("C:\\Users\\82104\\Documents\\R")#working directory경로 바꾸기
+a=read.table(file = "data1.txt", header = TRUE)#헤더옵션을 TRUE로 하고 메모장을 불러옴
+a#위에 해당 메모장파일의 내용이 불러와짐
+names(a) <- c("a","b","c","d")#해당 메모장의 열 이름을 a, b, c, d로 만들기 위한 벡터a 생성
+write.table(a, 'data2,txt',row.names = F)#벡터 a의 내용을 위에 메모장 파일에 써짐
+a
+
+
