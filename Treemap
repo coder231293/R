@@ -1,0 +1,12 @@
+library(treemap)
+
+data("GNI2014")
+
+str(GNI2014)
+
+library(png)
+
+png(filename="1.png")
+
+treemap(GNI2014, index = c("continent", "iso3"), vSize = "population", vColor = "GNI", type = "value")
+
