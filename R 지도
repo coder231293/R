@@ -1,0 +1,15 @@
+install.packages("maps")
+library(maps)
+library(dplyr)
+install.packages("geosphere")
+library(geosphere)#지도를 표시할 때 사용하는 패키지 설치
+par(mar=c(0,0,0,0))#여백을 지정, 없음으로 
+map('world', col="#f2f2f2",fill=T, bg="white", lwd=0.05, mar = rep(0,4), border=8, ylim=c(-80,80))#col는 육지 색깔, fill는 육지 색칠여부, bg는 바다색, lwd는 국경선 두께를 나타냄 
+Paris<-c(2,49)
+Seoul<-c(128,35)
+Melbourne<-c(145,-38)
+#각 도시들에 대한 좌표 설정
+mapdata <- rbind(Seoul, Melbourne, Paris) %>%
+  as.data.frame()
+colnames(mapdata) <- c("long", "lat")
+points(x=mapdata$long, y=mapdata$lat, col="slateblue", cex = 3, pch=20)#지도에 표시
