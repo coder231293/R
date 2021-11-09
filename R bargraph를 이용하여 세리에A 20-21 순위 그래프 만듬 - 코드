@@ -1,0 +1,22 @@
+install.packages("tidyverse")
+library(tidyverse)
+install.packages("nord")
+library(nord)
+no <- seq(1,10,1)
+team <- c("inter", "milan","atalanta","juventus", "napoli", "lazio","roma","sassuolo","sampdoria","hellas")
+w<-c(28,24,23,23,24,21,18,17,15,11)
+d<-c(7,7,9,9,5,5,8,11,7,12)
+l<-c(3,7,6,6,9,12,12,10,16,15)
+sum<-c(91,79,78,78,77,68,62,62,55,45)
+standing<-data.frame(no,team,w,d,l,sum)#데이터 프레임 만드는 과정
+lb<-standing
+angle<-90-(360*(lb$no-0.5)/nrow(standing))#각 텍스트 레이블이 위치할 자리 지정
+lb$hjust<-ifelse(angle < -90, 1, 0)#회전각도 지정
+lb$angle<-ifelse(angle < -90, angle + 180, angle)
+ggplot(standing, aes(x=as.factor(no), y=sum)) +
+  geom_bar(stat='identity', fill='blue') +
+  ylim(-100,120) +
+  theme_void() +
+  coord_polar(start=0) +
+  geom_text(data=lb, aes(x=no, y=sum, label=team,hjust=hjust),color='black',size=4,angle=lb$angle,inherit.aes=FALSE)
+#원형그래프로 시각화
